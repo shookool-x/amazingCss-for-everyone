@@ -1,0 +1,99 @@
+@property --fill {
+  syntax: '<percentage>';
+  inherits: true;
+  initial-value: 100%;
+}
+
+body {
+  margin: 0px;
+  background-color: #060636;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+}
+
+.social1 {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+
+.social1 a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  aspect-ratio: 1;
+  font-size: 2rem;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 1rem;
+  text-decoration: none;
+  outline: 1px solid transparent;
+  outline-offset: -8px;
+
+  background-image:
+    linear-gradient(45deg, transparent var(--fill), #fff var(--fill));
+
+  background-size: 100% 33.33%;
+  transition: 0.4s ease-in-out;
+  transition-property: --fill, all;
+}
+
+.social1 a:hover {
+  --fill: 0%;
+  color: #060636;
+  outline-color: currentColor;
+  background-image:
+    linear-gradient(transparent var(--fill), #fff var(--fill));
+
+}
+
+
+
+.social2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.social2 a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(238, 65, 99);
+  color: rgb(39, 30, 32);
+  width: 4rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.5s ease-in-out;
+
+}
+
+.social2 a:hover {
+  color: #fff;
+  --fill: 0%;
+}
+
+.social2 a::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  z-index: -1;
+  border-radius: inherit;
+  background: conic-gradient(transparent var(--fill), #fff var(--fill));
+  transition: --fill 0.5s linear;
+
+}

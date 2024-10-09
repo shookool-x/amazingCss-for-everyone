@@ -1,0 +1,213 @@
+@font-face {
+  font-family: 'Merienda';
+  src: url('./Merienda-VariableFont_wght.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 50px;
+  font-family: 'Merienda', 'monospace';
+  font-size: 1rem;
+  line-height: 2.5;
+  color: #fffb00;
+  background: linear-gradient(#000, #333);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+}
+
+h1 {
+  font-size: 34px;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: auto;
+  text-transform: uppercase;
+}
+
+/* hamberger icon! */
+
+.nav-icon {
+  z-index: 1;
+  position: relative;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.nav-icon span:nth-child(odd) {
+  background: white;
+  width: 50%;
+  height: 5px;
+  border-radius: 5px 0 0 5px;
+  position: absolute;
+  left: 0px;
+  transition: all 0.2s linear;
+}
+
+.nav-icon span:nth-child(even) {
+  background: white;
+  width: 50%;
+  height: 5px;
+  border-radius: 0 5px 5px 0;
+  position: absolute;
+  left: 50%;
+  transition: all 0.2s linear;
+}
+
+.nav-icon span:nth-child(1),
+.nav-icon span:nth-child(2) {
+  top: 0px;
+}
+
+.nav-icon span:nth-child(3),
+.nav-icon span:nth-child(4) {
+  top: 8px;
+}
+
+.nav-icon span:nth-child(5),
+.nav-icon span:nth-child(6) {
+  top: 16px;
+}
+
+.nav-open .nav-icon span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 1.5px;
+  left: 4px;
+}
+
+.nav-open .nav-icon span:nth-child(2) {
+  transform: rotate(-45deg);
+  top: 1.5px;
+  left: calc(50%-4px);
+}
+
+.nav-open .nav-icon span:nth-child(5) {
+  transform: rotate(-45deg);
+  left: 4px;
+  top: 12.5px;
+}
+
+.nav-open .nav-icon span:nth-child(6) {
+  transform: rotate(45deg);
+  top: 12.5px;
+  left: calc(50%-4px);
+}
+
+
+
+.nav-open .nav-icon span:nth-child(3) {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.nav-open .nav-icon span:nth-child(4) {
+  transform: translateX(+100%);
+  opacity: 0;
+}
+
+/* ------------- */
+
+nav {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  pointer-events: none;
+  user-select: none;
+  transition: 500ms ease-in-out;
+}
+
+nav:has(:nth-child(1):hover) {
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+}
+
+nav:has(:nth-child(2):hover) {
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+}
+
+nav:has(:nth-child(3):hover) {
+  grid-template-columns: 1fr 1fr 2fr 1fr;
+}
+
+nav:has(:nth-child(4):hover) {
+  grid-template-columns: 1fr 1fr 1fr 2fr;
+}
+
+.nav-item {
+  position: relative;
+  padding: 30px;
+  height: 100vh;
+  font-size: 24px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-size: cover;
+  pointer-events: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100vh);
+  transition: transform 0.65s;
+}
+
+.nav-open .nav-item {
+  transform: translateY(0);
+}
+
+.nav-item::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+  z-index: -1;
+
+}
+
+
+.nav-item:hover::after {
+  opacity: 0.5;
+}
+
+.nav-item:nth-child(1)::after {
+  background-color: rgb(211, 224, 16, 0.5);
+}
+
+.nav-item:nth-child(2)::after {
+  background-color: rgb(16, 224, 213, 0.5);
+}
+
+.nav-item:nth-child(3)::after {
+  background-color: rgb(224, 16, 16, 0.5);
+}
+
+.nav-item:nth-child(4)::after {
+  background-color: rgb(16, 224, 16, 0.5);
+}
+
+.nav-item:nth-child(1) {
+  background-image: url('./pics/city.jpg');
+  transition-delay: 0.2s;
+}
+
+.nav-item:nth-child(2) {
+  background-image: url('./pics/sea.jpg');
+  transition-delay: 0.8s;
+}
+
+.nav-item:nth-child(3) {
+  background-image: url('./pics/desert.jpg');
+  transition-delay: 0.4s;
+}
+
+.nav-item:nth-child(4) {
+  background-image: url('./pics/jungle.jpg');
+  transition-delay: 0.6s;
+}
