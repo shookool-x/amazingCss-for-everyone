@@ -184,10 +184,12 @@ body {
     25px 35px 20px rgba(0, 0, 0, 0.05),
     25px 30px 30px rgba(0, 0, 0, 0.05);
   border-radius: 53% 47% 59% 41% / 71% 69% 31% 29%;
-  transition: 0.5s ease;
+  animation: splash1 6s infinite linear;
+
 
   &:hover {
-    animation: splash1 3s infinite linear;
+    animation-play-state: paused;
+
   }
 }
 
@@ -197,11 +199,11 @@ body {
   }
 
   33% {
-    border-radius: 71% 29% 28% 72% / 71% 47% 53% 29%;
+    border-radius: 32% 68% 62% 38% / 66% 34% 66% 34%;
   }
 
   66% {
-    border-radius: 71% 29% 62% 38% / 24% 63% 37% 76%;
+    border-radius: 53% 47% 40% 60% / 66% 61% 39% 34%;
   }
 
   100% {
@@ -214,7 +216,9 @@ body {
   bottom: 200px;
   border-radius: 76% 24% 40% 60% / 36% 40% 60% 64%;
 
+  animation: splash2 6s infinite linear;
+
   &:hover {
-    animation: splash2 3s infinite linear;
+    animation-play-state: paused;
   }
 }
